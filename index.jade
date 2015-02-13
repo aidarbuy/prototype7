@@ -1,0 +1,17 @@
+link(rel="stylesheet", href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+link(rel="stylesheet", href='/styles/darkly.min.css')
+
+script(type="text/javascript", src='/bower_components/jquery/dist/jquery.min.js')
+script(type="text/javascript", src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
+script(type="text/javascript", src='/bower_components/angular/angular.min.js')
+script(type="text/javascript", src='/bower_components/angular-resource/angular-resource.min.js')
+script(type="text/javascript", src='/app/app.js')
+
+body(ng-app='app')
+    .container
+        div(ng-controller='testCtrl')
+            h1 Find a Doctor Today!
+            .list-group
+                a.list-group-item(href='#')(ng-repeat='doctor in doctors')
+                    h4.list-group-item-heading {{ doctor.name }}
+                    p.list-group-item-text {{ doctor.description }}

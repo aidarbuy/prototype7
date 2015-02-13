@@ -1,0 +1,16 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "authors": [
+    "aidarbuy <aidarbuy@gmail.com>"
+  ],
+  "description": "doctor finding app",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "bootstrap": "~3.3.2",
+    "angular": "~1.3.13",
+    "angular-resource": "~1.3.13"
+  }
+}
