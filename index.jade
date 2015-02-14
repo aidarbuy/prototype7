@@ -6,13 +6,20 @@ script(type="text/javascript", src='/bower_components/bootstrap/dist/js/bootstra
 script(type="text/javascript", src='/bower_components/angular/angular.min.js')
 script(type="text/javascript", src='/bower_components/angular-resource/angular-resource.min.js')
 script(type="text/javascript", src='/app/app.js')
-script(type="text/javascript", src='/app/doctors.js')
+script(type="text/javascript", src='/app/doctors-factory.js')
 
 body(ng-app='app')
     .container
         div(ng-controller='testCtrl')
+            h1 Post a New Doctor:
+            form(ng-submit="submit()")
+                .form-group
+                    input.form-control(placeholder="Enter name here..." ng-model="name")
+                .form-group
+                    textarea.form-control(placeholder="Enter description here..." ng-model="description")
+                .form-group
+                    button.btn.btn-primary(type="submit") Post
             h1 Find a Doctor Today!
-            h2 this app pushed by codeship ^_^
             .list-group
                 a.list-group-item(href='#')(ng-repeat='doctor in doctors')
                     h4.list-group-item-heading {{ doctor.name }}

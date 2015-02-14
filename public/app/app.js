@@ -1,6 +1,12 @@
-angular.module('app', ['ngResource']);
+app = angular.module('app', ['ngResource']);
 
 angular.module('app').controller('testCtrl', function($scope, $resource, doctorsFactory) {
     $scope.doctors = $resource('/api/doctors').query();
-    // doctorsFactory.save({name:"Doctors Factory", description:"Doctors factory description hrer"});
+    
+    $scope.submit = function() {
+        var doctor = {name:$scope.name, description:$scope.description};
+        doctorsFactory.save(doctor);
+        $scope.doctors.push(doctor);
+        console.log($scope.doctors);
+    };
 });

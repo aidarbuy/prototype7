@@ -1,20 +1,12 @@
-var mongoose = require('mongoose');
 var express = require('express');
 var app = express();
-var doctorModel = require('./models/Doctor');
 var doctorsData = require("./doctors-data");
+require("./doctors-service")(doctorsData, app);
 
 app.use(express.static(__dirname + '/public'));
 
 app.set('views', __dirname);
 app.set('view engine', 'jade');
-
-app.get('/api/doctors', function(req, res) {
-    mongoose.model('Doctor').find({}).exec(function(err, collection) {
-        console.log("Serving /api/doctors now...");
-        res.send(collection);
-    })
-});
 
 app.get('*', function(req, res) {
     res.render('index');

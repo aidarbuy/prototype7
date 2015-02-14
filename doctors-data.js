@@ -23,7 +23,7 @@ exports.saveDoctor = createDoctor;
 exports.seedDoctors = function() {
     return findDoctors({}).then(function(collection) {
         if(collection.length === 0) {
-            return Promise.map(doctorsSeed.doctors, function(doctor) {
+            return Promise.map(doctorsSeed, function(doctor) {
                 return createDoctor(doctor);
             });
         }
